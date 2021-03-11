@@ -4,25 +4,28 @@
 //  Select the following single elements from the div.card
 
 // A- finding across the entire DOM
-const header = null
-const logoTitle = null
-const firstCard = null
+const header = document.getElementsByTagName("header");
+const logoTitle = document.getElementById("logoTitle");
+const firstCard = document.getElementsByClassName("card")[0];
 // B- finding within one particular element
-const imageFirstCard = null
-const titleFirstCard = null
-const subtitleFirstCard = null
-const textFirstCard = null
+const imageFirstCard = firstCard.querySelector(".card-img-top");
+const titleFirstCard = firstCard.querySelector(".card-title");
+const subtitleFirstCard = firstCard.querySelector(".card-subtitle");
+const textFirstCard = firstCard.querySelector(".card-text");
 // C- traversing with dot notation
-const link1FirstCard = null
-const link2FirstCard = null
-
+const link1FirstCard = firstCard.querySelectorAll(".card-link")[0];
+const link2FirstCard = firstCard.querySelectorAll(".card-link")[1];
 
 // 👉 2- Finding collections of elements in the DOM
 // A- Find all the anchor tags inside the nav element
 // B- Loop over the links and console.log their text content
 // C- Turn the collection of links into a real array
 // D- Use .filter to find the anchor tag with the textContent of "Home"
-
+const anchorTags = document.querySelectorAll(".menu-item");
+anchorTags.forEach(tag => console.log(tag.innerHTML));
+let anchorTagsArray = []
+anchorTags.forEach(tag => anchorTagsArray.push(tag.href))
+console.log(anchorTagsArray)
 
 // 👉 3- Changing an element's text content
 //  A- Change the cat-related content into dog-related content
